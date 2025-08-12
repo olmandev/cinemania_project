@@ -13,7 +13,9 @@ Thumbs.db
 *.class
 *.dll
 *.so
-
+*.class
+build/
+out/
 # Carpetas de compilación
 bin/
 build/
