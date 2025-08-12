@@ -27,77 +27,81 @@ public class ConsultaHorarios extends Conexion {
     HorariosPOO hor;
 
     public boolean crearHorario(HorariosPOO hor) {
-    Connection con = getConexion();
+        Connection con = getConexion();
 
-    try {
-        // 1️⃣ Obtener duración de la película
-        String sqlDuracion = "SELECT duracion FROM peliculas WHERE titulo = ?";
-        PreparedStatement psDur = con.prepareStatement(sqlDuracion);
-        psDur.setString(1, hor.getPelicula());
-        ResultSet rsDur = psDur.executeQuery();
-
-        if (!rsDur.next()) {
-            JOptionPane.showMessageDialog(null, "No se encontró la duración de la película");
-            return false;
-        }
-        int duracionMin = rsDur.getInt("duracion");
-
-        // 2️⃣ Calcular hora fin
-        LocalTime horaFin = hor.getHoraI().plusMinutes(duracionMin);
-
-        // 3️⃣ Validar que la sala esté libre
-        String sqlCheck = """
-            SELECT * FROM horarios
-            WHERE sala = ? AND dia = ?
-              AND NOT (hora_fin <= ? OR hora_inicio >= ?)
-        """;
-        PreparedStatement psCheck = con.prepareStatement(sqlCheck);
-        psCheck.setString(1, hor.getSala());
-        psCheck.setString(2, hor.getDia());
-        psCheck.setTime(3, Time.valueOf(hor.getHoraI())); // hora nueva inicio
-        psCheck.setTime(4, Time.valueOf(horaFin));        // hora nueva fin
-        ResultSet rsCheck = psCheck.executeQuery();
-
-        if (rsCheck.next()) {
-            JOptionPane.showMessageDialog(null, "⚠ La sala ya está ocupada en ese horario");
-            return false;
-        }
-
-        // 4️⃣ Insertar el nuevo horario
-        sentenciaSQL = """
-            INSERT INTO horarios(pelicula, sala, dia, hora_inicio, hora_fin, estado)
-            VALUES(?,?,?,?,?,?)
-        """;
-        PreparedStatement psInsert = con.prepareStatement(sentenciaSQL, Statement.RETURN_GENERATED_KEYS);
-        psInsert.setString(1, hor.getPelicula());
-        psInsert.setString(2, hor.getSala());
-        psInsert.setString(3, hor.getDia());
-        psInsert.setTime(4, Time.valueOf(hor.getHoraI()));
-        psInsert.setTime(5, Time.valueOf(horaFin));
-        psInsert.setString(6, hor.getEstado());
-        psInsert.executeUpdate();
-
-        ResultSet generatedKeys = psInsert.getGeneratedKeys();
-        if (generatedKeys.next()) {
-            int idGenerado = generatedKeys.getInt(1);
-            System.out.println("ID generado: " + idGenerado);
-        }
-
-        JOptionPane.showMessageDialog(null, "Horario creado correctamente - BD");
-        return true;
-
-    } catch (SQLException ex) {
-        System.out.println("Error al crear horarioo: " + ex.getMessage());
-        return false;
-
-    } finally {
         try {
-            con.close();
+            // 1️⃣ Obtener duración de la película
+            String sqlDuracion = "SELECT duracion FROM peliculas WHERE titulo = ?";
+            PreparedStatement psDur = con.prepareStatement(sqlDuracion);
+            psDur.setString(1, hor.getPelicula());
+            ResultSet rsDur = psDur.executeQuery();
+
+            if (!rsDur.next()) {
+                JOptionPane.showMessageDialog(null, "No se encontró la duración de la película");
+                return false;
+            }
+            // Obtener la duración como Time y convertir a minutos totales
+            Time duracionTime = rsDur.getTime("duracion");
+            long duracionMillis = duracionTime.getTime();
+            int duracionMin = (int) (duracionMillis / (60 * 1000)) % (60 * 60 * 24);
+            System.out.println("Duración en minutos: " + duracionMin);
+
+            // 2️⃣ Calcular hora fin
+            LocalTime horaFin = hor.getHoraI().plusMinutes(duracionMin);
+
+            // 3️⃣ Validar que la sala esté libre
+            String sqlCheck = """
+                SELECT * FROM horarios
+                WHERE sala = ? AND dia = ?
+                  AND NOT (hora_fin <= ? OR hora_inicio >= ?)
+            """;
+            PreparedStatement psCheck = con.prepareStatement(sqlCheck);
+            psCheck.setString(1, hor.getSala());
+            psCheck.setString(2, hor.getDia());
+            psCheck.setTime(3, Time.valueOf(hor.getHoraI())); // hora nueva inicio
+            psCheck.setTime(4, Time.valueOf(horaFin));        // hora nueva fin
+            ResultSet rsCheck = psCheck.executeQuery();
+
+            if (rsCheck.next()) {
+                JOptionPane.showMessageDialog(null, "⚠ La sala ya está ocupada en ese horario");
+                return false;
+            }
+
+            // 4️⃣ Insertar el nuevo horario
+            sentenciaSQL = """
+                INSERT INTO horarios(pelicula, sala, dia, hora_inicio, hora_fin, estado)
+                VALUES(?,?,?,?,?,?)
+            """;
+            PreparedStatement psInsert = con.prepareStatement(sentenciaSQL, Statement.RETURN_GENERATED_KEYS);
+            psInsert.setString(1, hor.getPelicula());
+            psInsert.setString(2, hor.getSala());
+            psInsert.setString(3, hor.getDia());
+            psInsert.setTime(4, Time.valueOf(hor.getHoraI()));
+            psInsert.setTime(5, Time.valueOf(horaFin));
+            psInsert.setString(6, hor.getEstado());
+            psInsert.executeUpdate();
+
+            ResultSet generatedKeys = psInsert.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                int idGenerado = generatedKeys.getInt(1);
+                System.out.println("ID generado: " + idGenerado);
+            }
+
+            JOptionPane.showMessageDialog(null, "Horario creado correctamente - BD");
+            return true;
+
         } catch (SQLException ex) {
-            System.out.println("Error al cerrar conexión: " + ex.getMessage());
+            System.out.println("Error al crear horarioo: " + ex.getMessage());
+            return false;
+
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                System.out.println("Error al cerrar conexión: " + ex.getMessage());
+            }
         }
     }
-}
 
 
     public boolean eliminarHorario(int idHorario) {
