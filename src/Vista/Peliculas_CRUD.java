@@ -91,7 +91,7 @@ public class Peliculas_CRUD extends javax.swing.JDialog {
         botBuscarC = new javax.swing.JButton();
         jtfDuracion = new javax.swing.JFormattedTextField();
         botEliminar1 = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jcbClasificacion = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -244,8 +244,8 @@ public class Peliculas_CRUD extends javax.swing.JDialog {
         botEliminar1.setFocusable(false);
         jPanel3.add(botEliminar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 190, 160, 50));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INFANTIL", "ADOLESCENTE", "ADULTO" }));
-        jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 100, -1));
+        jcbClasificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INFANTIL", "ADOLESCENTE", "ADULTO" }));
+        jPanel3.add(jcbClasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 180, 50));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 940, 480));
 
@@ -310,7 +310,6 @@ public class Peliculas_CRUD extends javax.swing.JDialog {
     public javax.swing.JButton botImagen;
     public javax.swing.JButton botLeer;
     public javax.swing.JButton botLimpiar;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -322,6 +321,7 @@ public class Peliculas_CRUD extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JComboBox<String> jcbClasificacion;
     public javax.swing.JLabel jlbUsuarioPeli;
     public javax.swing.JTextField jtfCodigo;
     public javax.swing.JFormattedTextField jtfDuracion;

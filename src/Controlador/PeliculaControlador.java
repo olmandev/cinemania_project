@@ -81,7 +81,6 @@ public class PeliculaControlador implements ActionListener {
 
             if (formpeli.jtfCodigo.getText().isEmpty()
                     || formpeli.jtfTitulo.getText().isEmpty()
-                    //|| formpeli.jtfClasificacion.getText().isEmpty()
                     || formpeli.jtfDuracion.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "COMPLETE TODOS LOS CAMPOS ");
                 return;
@@ -89,7 +88,7 @@ public class PeliculaControlador implements ActionListener {
             peli.setCodigo(Integer.parseInt(formpeli.jtfCodigo.getText()));
             peli.setTitulo(formpeli.jtfTitulo.getText());
             peli.setDuracion(formpeli.jtfDuracion.getText());
-            //peli.setClasificacion(formpeli.jtfClasificacion.getText());
+            peli.setClasificacion((String) formpeli.jcbClasificacion.getSelectedItem());
             peli.setEstado("Activo");
             if (conBDPeli.crearPelicula(peli)) {
                 JOptionPane.showMessageDialog(null, "PELICULA CREADA CORRECTAMENTE - CONT");

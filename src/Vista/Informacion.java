@@ -8,82 +8,20 @@ package Vista;
  *
  * @author alexs
  */
-import java.awt.BorderLayout;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.io.File;
-import javafx.application.Platform;
-import javafx.embed.swing.JFXPanel;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
+
 
 
 public class Informacion extends javax.swing.JFrame {
 
-     private final JFXPanel jfxPanel = new JFXPanel();
-    private MediaPlayer oracleVid; // 
+
 
 
     public Informacion() {
-        initComponents();
-         createscene();
-        setTitle("CREDITOS");
-
-        setResizable(false);
-        setLocationRelativeTo(null);
-
-        JPanelVideo.setLayout(new BorderLayout());
-        JPanelVideo.add(jfxPanel, BorderLayout.CENTER);
-        this.setLocationRelativeTo(null);
-
-        // Iniciar al mostrarse, detener/limpiar al cerrar
-        addWindowListener(new WindowAdapter() {
-            @Override
-            public void windowOpened(WindowEvent e) {
-                Platform.runLater(() -> {
-                    if (oracleVid != null) {
-                        oracleVid.play();
-                    }
-                });
-            }
-
-            @Override
-            public void windowClosing(WindowEvent e) {
-                Platform.runLater(() -> {
-                    if (oracleVid != null) {
-                        oracleVid.stop();
-                        oracleVid.dispose();
-                    }
-                });
-            }
-
-            @Override
-            public void windowClosed(WindowEvent e) {
-                Platform.runLater(() -> {
-                    if (oracleVid != null) {
-                        oracleVid.stop();
-                        oracleVid.dispose();
-                    }
-                });
-            }
-        });
+        
     }
 
-    private void createscene() {
-        Platform.runLater(() -> {
-            File file = new File("/Users/dahery/Desktop/ultimo_proyecto/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineManiaCreditos_grupo3.mp4");
-            oracleVid = new MediaPlayer(new Media(file.toURI().toString()));
-            MediaView mv = new MediaView(oracleVid);
-
-            jfxPanel.setScene(new Scene(new Group(mv)));
-            oracleVid.setVolume(1.0);
-            oracleVid.setCycleCount(MediaPlayer.INDEFINITE);
-            // oracleVid.play();  // <-- IMPORTANTE: YA NO se reproduce aquí
-        });
-    }
+    
+    
 
 
     @SuppressWarnings("unchecked")
