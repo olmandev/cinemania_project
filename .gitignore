@@ -1,5 +1,10 @@
-/dist/
-
 /build/
 *.class
+
+# Ignorar todo dist
+/dist/*
+
+# Pero no ignorar librerías necesarias
+!/dist/lib/
+!/dist/lib/**
 
