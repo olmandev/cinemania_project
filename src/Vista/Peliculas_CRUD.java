@@ -77,7 +77,6 @@ public class Peliculas_CRUD extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jtfClasificacion = new javax.swing.JTextField();
         jtfCodigo = new javax.swing.JTextField();
         jtfTitulo = new javax.swing.JTextField();
         botBuscarT = new javax.swing.JButton();
@@ -92,6 +91,7 @@ public class Peliculas_CRUD extends javax.swing.JDialog {
         botBuscarC = new javax.swing.JButton();
         jtfDuracion = new javax.swing.JFormattedTextField();
         botEliminar1 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -148,15 +148,12 @@ public class Peliculas_CRUD extends javax.swing.JDialog {
         jLabel5.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("CLASIFICACION");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 102, 30));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 120, 30));
 
         jLabel6.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("DURACION");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 89, 30));
-
-        jtfClasificacion.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
-        jPanel3.add(jtfClasificacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 220, 50));
 
         jtfCodigo.setFont(new java.awt.Font("Rockwell Extra Bold", 1, 14)); // NOI18N
         jPanel3.add(jtfCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 220, 50));
@@ -247,6 +244,9 @@ public class Peliculas_CRUD extends javax.swing.JDialog {
         botEliminar1.setFocusable(false);
         jPanel3.add(botEliminar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 190, 160, 50));
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "INFANTIL", "ADOLESCENTE", "ADULTO" }));
+        jPanel3.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 230, 100, -1));
+
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 940, 480));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 640));
@@ -310,6 +310,7 @@ public class Peliculas_CRUD extends javax.swing.JDialog {
     public javax.swing.JButton botImagen;
     public javax.swing.JButton botLeer;
     public javax.swing.JButton botLimpiar;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -322,7 +323,6 @@ public class Peliculas_CRUD extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JLabel jlbUsuarioPeli;
-    public javax.swing.JTextField jtfClasificacion;
     public javax.swing.JTextField jtfCodigo;
     public javax.swing.JFormattedTextField jtfDuracion;
     public javax.swing.JTextField jtfTitulo;

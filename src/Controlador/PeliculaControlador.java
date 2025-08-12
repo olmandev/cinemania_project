@@ -65,7 +65,7 @@ public class PeliculaControlador implements ActionListener {
         formpeli.jtfCodigo.setText("0");
         formpeli.jtfTitulo.setText(null);
         formpeli.jtfTitulo.requestFocus();
-        formpeli.jtfClasificacion.setText(null);
+        //formpeli.jtfClasificacion.setText(null);
         formpeli.jtfDuracion.setText(null);
         formpeli.lblFoto.setIcon(icono);
         int fila = formpeli.tblPeliculas.getRowCount();
@@ -81,7 +81,7 @@ public class PeliculaControlador implements ActionListener {
 
             if (formpeli.jtfCodigo.getText().isEmpty()
                     || formpeli.jtfTitulo.getText().isEmpty()
-                    || formpeli.jtfClasificacion.getText().isEmpty()
+                    //|| formpeli.jtfClasificacion.getText().isEmpty()
                     || formpeli.jtfDuracion.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "COMPLETE TODOS LOS CAMPOS ");
                 return;
@@ -89,7 +89,7 @@ public class PeliculaControlador implements ActionListener {
             peli.setCodigo(Integer.parseInt(formpeli.jtfCodigo.getText()));
             peli.setTitulo(formpeli.jtfTitulo.getText());
             peli.setDuracion(formpeli.jtfDuracion.getText());
-            peli.setClasificacion(formpeli.jtfClasificacion.getText());
+            //peli.setClasificacion(formpeli.jtfClasificacion.getText());
             peli.setEstado("Activo");
             if (conBDPeli.crearPelicula(peli)) {
                 JOptionPane.showMessageDialog(null, "PELICULA CREADA CORRECTAMENTE - CONT");
@@ -106,7 +106,7 @@ public class PeliculaControlador implements ActionListener {
         if (e.getSource() == formpeli.botActualizar) {
             if (formpeli.jtfCodigo.getText().isEmpty()
                     || formpeli.jtfTitulo.getText().isEmpty()
-                    || formpeli.jtfClasificacion.getText().isEmpty()
+                    //|| formpeli.jtfClasificacion.getText().isEmpty()
                     || formpeli.jtfDuracion.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "COMPLETE TODOS LOS CAMPOS ");
                 return;
@@ -114,7 +114,7 @@ public class PeliculaControlador implements ActionListener {
             peli.setCodigo(Integer.parseInt(formpeli.jtfCodigo.getText()));
             peli.setTitulo(formpeli.jtfTitulo.getText());
             peli.setDuracion(formpeli.jtfDuracion.getText());
-            peli.setClasificacion(formpeli.jtfClasificacion.getText());
+            //peli.setClasificacion(formpeli.jtfClasificacion.getText());
             if (cambio.equals("no")) {
                 peli.setImagen(dirImagen);
             }
@@ -144,7 +144,7 @@ public class PeliculaControlador implements ActionListener {
                 JOptionPane.showMessageDialog(null, "PELICULA ENCONTRADO - CONTR");
                 formpeli.jtfTitulo.setText(peli.getTitulo());
                 formpeli.jtfDuracion.setText(peli.getDuracion());
-                formpeli.jtfClasificacion.setText(peli.getClasificacion());
+                //formpeli.jtfClasificacion.setText(peli.getClasificacion());
                 formpeli.lblFoto.setIcon(formpeli.tamanioImagen(peli.getImagen()));
                 dirImagen = peli.getImagen();
             } else {
@@ -157,7 +157,7 @@ public class PeliculaControlador implements ActionListener {
             if (conBDPeli.leerPeliculaTitulo(peli)) {
                 formpeli.jtfCodigo.setText(String.valueOf(peli.getCodigo()));
                 formpeli.jtfDuracion.setText(peli.getDuracion());
-                formpeli.jtfClasificacion.setText(peli.getClasificacion());
+                //formpeli.jtfClasificacion.setText(peli.getClasificacion());
                 formpeli.lblFoto.setIcon(formpeli.tamanioImagen(peli.getImagen()));
                 dirImagen = peli.getImagen();
             } else {
