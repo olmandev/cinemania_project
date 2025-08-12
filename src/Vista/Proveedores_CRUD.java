@@ -1,0 +1,328 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
+ */
+package Vista;
+
+import java.awt.Image;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
+/**
+ *
+ * @author alexs
+ */
+public class Proveedores_CRUD extends javax.swing.JDialog {
+
+    String usuario;
+    public String direccionImagen;
+
+    public Proveedores_CRUD(java.awt.Frame parent, boolean modal, String user) {
+        super(parent, modal);
+        initComponents();
+        this.usuario = user;
+        jlbUsuarioProve.setText(usuario);
+        jtfCodigo.setText("0");
+        jtfNombre.requestFocus();
+    }
+    
+    public void buscarImagen() {
+        //NOS PERMITE  A TRAVES DE UNA VENTANA SELECCIONAR UN ARCHIVO
+        JFileChooser file = new JFileChooser();
+        file.setCurrentDirectory(new File("C:/imagenesProveedores"));//ESTABLECEMOS UNA RUTA DE LA CARPETA DE IMAGENES
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("*.Images", "jpg", "gif", "png");//TIPOS DE EXTENSION DE LA IMAGEN
+        file.addChoosableFileFilter(filter);
+        int estado = file.showOpenDialog(this);
+        //SI EL USUARIO DIO CLICK EN EL BOTON ACEPTAR
+        if (estado == JFileChooser.APPROVE_OPTION) {
+            //SELECCIONAMOS LA FOTO
+            File selectedFile = file.getSelectedFile();
+            //OBTENEMOS LA RUTA
+            String path = selectedFile.getAbsolutePath();
+            direccionImagen = path;
+            //COLOCAMOS EL TAMAÑO DE LA IMAGEN IGUAL AL DE LA ETIQUETA
+            lblFoto.setIcon(tamanioImagen(direccionImagen));
+            //SI EL USUARIO DIO CLICK EN CANCELAR
+        } else if (estado == JFileChooser.CANCEL_OPTION) {
+            JOptionPane.showMessageDialog(null, "NO SELECCIONO NINGUNA FOTO", "ATENCION", JOptionPane.WARNING_MESSAGE);
+        }
+    }
+    
+     public ImageIcon tamanioImagen(String DirImagen) {
+        //INICIALIZAMOS LA IMAGEN
+        ImageIcon FotoCliente = new ImageIcon(DirImagen);
+        Image img = FotoCliente.getImage();
+        //TOMAMOS EL ANCHO Y EL ALTO DE LA ETIQUETA Y ASI SE LO COLOCAMOS EN LA IMAGEN
+        Image newImage = img.getScaledInstance(lblFoto.getWidth(), lblFoto.getHeight(), Image.SCALE_DEFAULT);
+        ImageIcon image = new ImageIcon(newImage);
+        return image;
+    }
+
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jlbUsuarioProve = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        botHome = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jtfCodigo = new javax.swing.JTextField();
+        jtfNombre = new javax.swing.JTextField();
+        botBuscarT = new javax.swing.JButton();
+        lblFoto = new javax.swing.JLabel();
+        botFoto = new javax.swing.JButton();
+        botLimpiar = new javax.swing.JButton();
+        botCrear = new javax.swing.JButton();
+        botActualizar = new javax.swing.JButton();
+        botLeer = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblProveedores = new javax.swing.JTable();
+        botBuscarC = new javax.swing.JButton();
+        botEliminar = new javax.swing.JButton();
+        jtfContacto = new javax.swing.JFormattedTextField();
+        botcamara = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBackground(new java.awt.Color(204, 0, 0));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Rockwell Condensed", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("PROVEEDORES");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 340, 60));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/LogoCinem.png"))); // NOI18N
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 10, 380, 119));
+
+        jlbUsuarioProve.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
+        jlbUsuarioProve.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(jlbUsuarioProve, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 90, 100, 30));
+
+        jLabel9.setFont(new java.awt.Font("Rockwell Condensed", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("USUARIO: ");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 90, 100, 30));
+
+        botHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/1.png"))); // NOI18N
+        botHome.setBorderPainted(false);
+        botHome.setContentAreaFilled(false);
+        botHome.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/2.png"))); // NOI18N
+        botHome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botHomeActionPerformed(evt);
+            }
+        });
+        jPanel2.add(botHome, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 90, 70));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 940, 130));
+
+        jPanel3.setBackground(new java.awt.Color(204, 0, 0));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("NOMBRE");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 72, 30));
+
+        jLabel4.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("CODIGO");
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 72, 30));
+
+        jLabel6.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("CONTACTO");
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 89, 30));
+
+        jtfCodigo.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        jPanel3.add(jtfCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 220, 50));
+
+        jtfNombre.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        jPanel3.add(jtfNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 220, 50));
+
+        botBuscarT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar.png"))); // NOI18N
+        botBuscarT.setBorderPainted(false);
+        jPanel3.add(botBuscarT, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 60, 50));
+
+        lblFoto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel3.add(lblFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 20, 190, 200));
+
+        botFoto.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
+        botFoto.setText("IMAGEN");
+        botFoto.setBorderPainted(false);
+        jPanel3.add(botFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 230, 90, 30));
+
+        botLimpiar.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        botLimpiar.setText("LIMPIAR");
+        botLimpiar.setBorderPainted(false);
+        jPanel3.add(botLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 250, 160, 50));
+
+        botCrear.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        botCrear.setText("CREAR");
+        botCrear.setBorderPainted(false);
+        jPanel3.add(botCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 10, 160, 50));
+
+        botActualizar.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        botActualizar.setText("ACTUALIZAR");
+        botActualizar.setBorderPainted(false);
+        jPanel3.add(botActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 70, 160, 50));
+
+        botLeer.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        botLeer.setText("LEER");
+        botLeer.setBorderPainted(false);
+        jPanel3.add(botLeer, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 130, 160, 50));
+
+        tblProveedores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "CODIGO", "NOMBRE", "CONTACTO"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblProveedores);
+        if (tblProveedores.getColumnModel().getColumnCount() > 0) {
+            tblProveedores.getColumnModel().getColumn(0).setResizable(false);
+            tblProveedores.getColumnModel().getColumn(1).setResizable(false);
+            tblProveedores.getColumnModel().getColumn(2).setResizable(false);
+        }
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 890, 170));
+
+        botBuscarC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/buscar.png"))); // NOI18N
+        botBuscarC.setBorderPainted(false);
+        jPanel3.add(botBuscarC, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, 60, 50));
+
+        botEliminar.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
+        botEliminar.setText("ELIMINAR");
+        botEliminar.setBorderPainted(false);
+        jPanel3.add(botEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 190, 160, 50));
+
+        try {
+            jtfContacto.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("'(504)'- #### - ####")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+        jPanel3.add(jtfContacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 220, 60));
+
+        botcamara.setFont(new java.awt.Font("Rockwell Condensed", 1, 12)); // NOI18N
+        botcamara.setText("CAMARA");
+        botcamara.setBorderPainted(false);
+        botcamara.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botcamaraActionPerformed(evt);
+            }
+        });
+        jPanel3.add(botcamara, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 230, 90, 30));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, 940, 490));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 970, 650));
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void botHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botHomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botHomeActionPerformed
+
+    private void botcamaraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botcamaraActionPerformed
+            // TODO add your handling code here:
+    }//GEN-LAST:event_botcamaraActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Proveedores_CRUD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Proveedores_CRUD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Proveedores_CRUD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Proveedores_CRUD.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the dialog */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                Proveedores_CRUD dialog = new Proveedores_CRUD(new javax.swing.JFrame(), true, "ALX");
+                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+                    @Override
+                    public void windowClosing(java.awt.event.WindowEvent e) {
+                        System.exit(0);
+                    }
+                });
+                dialog.setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton botActualizar;
+    public javax.swing.JButton botBuscarC;
+    public javax.swing.JButton botBuscarT;
+    public javax.swing.JButton botCrear;
+    public javax.swing.JButton botEliminar;
+    public javax.swing.JButton botFoto;
+    public javax.swing.JButton botHome;
+    public javax.swing.JButton botLeer;
+    public javax.swing.JButton botLimpiar;
+    public javax.swing.JButton botcamara;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JLabel jlbUsuarioProve;
+    public javax.swing.JTextField jtfCodigo;
+    public javax.swing.JFormattedTextField jtfContacto;
+    public javax.swing.JTextField jtfNombre;
+    public javax.swing.JLabel lblFoto;
+    public javax.swing.JTable tblProveedores;
+    // End of variables declaration//GEN-END:variables
+}

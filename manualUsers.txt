@@ -1,0 +1,10 @@
+---- MANUAL DE USUARIOS ----
+
+ administrador 
+
+1. user: admin //  contraseña: 12345
+
+cajero 
+
+1. user: cajera // contraseña: 12345
+ 
