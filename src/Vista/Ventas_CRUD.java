@@ -21,6 +21,8 @@ public class Ventas_CRUD extends javax.swing.JDialog {
         jblUsuarioVentas.setText(usuario);
         jtfCodigo.setText("0");
         jtfCliente.requestFocus();
+        jtfFecha.setDateFormatString("yyyy-MM-dd");
+        ((javax.swing.JTextField) jtfFecha.getDateEditor().getUiComponent()).setEditable(false);
 
 
         cbxPelicula.addItem("SELECCIONE UNA PELICULA");
@@ -74,11 +76,11 @@ public class Ventas_CRUD extends javax.swing.JDialog {
         jLabel16 = new javax.swing.JLabel();
         jtfCliente = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        jtfFecha = new javax.swing.JFormattedTextField();
         botAsientos = new javax.swing.JButton();
         jLabel17 = new javax.swing.JLabel();
         botBuscarVent = new javax.swing.JButton();
         jtfAsientos = new javax.swing.JTextField();
+        jtfFecha = new com.toedter.calendar.JDateChooser();
         botHome = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
@@ -340,9 +342,6 @@ public class Ventas_CRUD extends javax.swing.JDialog {
         jLabel15.setText("CAMBIO :");
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 70, 30));
 
-        jtfFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
-        jPanel2.add(jtfFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 590, 190, 30));
-
         botAsientos.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         botAsientos.setText("CHOOSE");
         botAsientos.addActionListener(new java.awt.event.ActionListener() {
@@ -364,6 +363,7 @@ public class Ventas_CRUD extends javax.swing.JDialog {
         jtfAsientos.setEditable(false);
         jtfAsientos.setFont(new java.awt.Font("Rockwell Condensed", 1, 14)); // NOI18N
         jPanel2.add(jtfAsientos, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 190, 40));
+        jPanel2.add(jtfFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 590, 190, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 440, 630));
 
@@ -499,7 +499,7 @@ public class Ventas_CRUD extends javax.swing.JDialog {
     public javax.swing.JTextField jtfCantidadPagar;
     public static javax.swing.JTextField jtfCliente;
     public javax.swing.JTextField jtfCodigo;
-    public javax.swing.JFormattedTextField jtfFecha;
+    public com.toedter.calendar.JDateChooser jtfFecha;
     public javax.swing.JTextField jtfISV;
     public javax.swing.JTextField jtfSubtotal;
     public static javax.swing.JTextField jtfTotalPagar;

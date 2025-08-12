@@ -294,7 +294,7 @@ public class VentaControlador implements ActionListener {
         formVent.rdTarjeta.setSelected(false);
         formVent.jtfCantidadPagar.setText(null);
         formVent.jtfCambio.setText(null);
-        formVent.jtfFecha.setText(null);
+        formVent.jtfFecha.setDate(null);
         int fila = formVent.tblFactura.getRowCount();
         for (int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);
@@ -313,7 +313,7 @@ public class VentaControlador implements ActionListener {
             if (formVent.jtfCliente.getText().isEmpty()
                     || formVent.cbxPelicula.getSelectedItem() == null
                     || formVent.cbxSala.getSelectedItem() == null
-                    || formVent.jtfFecha.getText().isEmpty()
+                    || formVent.jtfFecha.getDate() == null
                     || formVent.jtfCantidadPagar.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "SELECCIONE TODOS LOS CAMPOS");
                 return;
@@ -342,7 +342,9 @@ public class VentaControlador implements ActionListener {
             vent.setMetodo(metodoPago);
             vent.setCantidadpagar(Double.valueOf(formVent.jtfCantidadPagar.getText()));
             vent.setCambio(Double.valueOf(formVent.jtfCambio.getText()));
-            vent.setFecha(formVent.jtfFecha.getText());
+            java.util.Date d = formVent.jtfFecha.getDate();
+String fecha = new java.text.SimpleDateFormat("yyyy-MM-dd").format(d);
+vent.setFecha(fecha);
             vent.setEstado("Activo");
 
             int idVentaCreada = conBDVent.crearVenta(vent);
@@ -409,7 +411,11 @@ public class VentaControlador implements ActionListener {
                     formVent.jtfTotalPagar.setText(String.format("%.2f", vent.getTotal()));
                     formVent.jtfCantidadPagar.setText(String.format("%.2f", vent.getCantidadpagar()));
                     formVent.jtfCambio.setText(String.format("%.2f", vent.getCambio()));
-                    formVent.jtfFecha.setText(vent.getFecha());
+                   try {
+    formVent.jtfFecha.setDate(java.sql.Date.valueOf(vent.getFecha()));
+} catch (IllegalArgumentException ex) {
+    formVent.jtfFecha.setDate(null); // por si viene vacío o mal formateado
+}
 
                     listaItems.clear();
                     listaItems.addAll(conBDVent.buscarDetalle(vent.getCodigo()));

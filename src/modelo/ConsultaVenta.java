@@ -40,7 +40,7 @@ public class ConsultaVenta extends Conexion {
             ps.setString(8, vent.getMetodo());
             ps.setDouble(9, vent.getCantidadpagar());
             ps.setDouble(10, vent.getCambio());
-            ps.setString(11, vent.getFecha());
+            ps.setDate(11, java.sql.Date.valueOf(vent.getFecha())); 
             ps.setString(12, "Activo");
             int resultado = ps.executeUpdate();
 
@@ -167,7 +167,8 @@ public class ConsultaVenta extends Conexion {
                 venta.setMetodo(rs.getString("metodo_pago"));
                 venta.setCantidadpagar(rs.getDouble("cantidad_pagar"));
                 venta.setCambio(rs.getDouble("cambio"));
-                venta.setFecha(rs.getString("fecha"));
+                java.sql.Date f = rs.getDate("fecha");
+venta.setFecha(f != null ? f.toString() : null);
                 lista.add(venta);
             }
         } catch (SQLException ex) {
@@ -211,7 +212,8 @@ public class ConsultaVenta extends Conexion {
                 vent.setMetodo(rs.getString("metodo_pago"));
                 vent.setCantidadpagar(rs.getDouble("cantidad_pagar"));
                 vent.setCambio(rs.getDouble("cambio"));
-                vent.setFecha(rs.getString("fecha"));
+                java.sql.Date f = rs.getDate("fecha");
+vent.setFecha(f != null ? f.toString() : null);
                 return true;
             }
             return false;

@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="1220" pageHeight="1500" orientation="Landscape" columnWidth="1180" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8d9fbd6d-28f0-4688-857e-0c87f530c293">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="398"/>
+	<property name="ireport.y" value="374"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#A52A2A">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Ventas" uuid="7d0941fd-edc6-4342-be12-11096119faea">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     ventas.`id_venta` AS ventas_id_venta,
+     ventas.`cliente` AS ventas_cliente,
+     ventas.`pelicula` AS ventas_pelicula,
+     ventas.`sala` AS ventas_sala,
+     ventas.`asiento` AS ventas_asiento,
+     ventas.`subtotal` AS ventas_subtotal,
+     ventas.`isv` AS ventas_isv,
+     ventas.`total` AS ventas_total,
+     ventas.`metodo_pago` AS ventas_metodo_pago,
+     ventas.`cantidad_pagar` AS ventas_cantidad_pagar,
+     ventas.`cambio` AS ventas_cambio,
+     ventas.`fecha` AS ventas_fecha,
+     ventas.`estado` AS ventas_estado
+FROM
+     `ventas` ventas]]>
+		</queryString>
+		<field name="ventas_id_venta" class="java.lang.Integer"/>
+		<field name="ventas_cliente" class="java.lang.String"/>
+		<field name="ventas_pelicula" class="java.lang.String"/>
+		<field name="ventas_sala" class="java.lang.String"/>
+		<field name="ventas_asiento" class="java.lang.String"/>
+		<field name="ventas_subtotal" class="java.math.BigDecimal"/>
+		<field name="ventas_isv" class="java.math.BigDecimal"/>
+		<field name="ventas_total" class="java.math.BigDecimal"/>
+		<field name="ventas_metodo_pago" class="java.lang.String"/>
+		<field name="ventas_cantidad_pagar" class="java.math.BigDecimal"/>
+		<field name="ventas_cambio" class="java.math.BigDecimal"/>
+		<field name="ventas_fecha" class="java.lang.String"/>
+		<field name="ventas_estado" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="VENTAS" uuid="98ed233b-cb26-420a-a868-4b035e463a7d">
+		<queryString language="SQL">
+			<![CDATA[SELECT
+     ventas.`id_venta` AS ventas_id_venta,
+     ventas.`cliente` AS ventas_cliente,
+     ventas.`pelicula` AS ventas_pelicula,
+     ventas.`sala` AS ventas_sala,
+     ventas.`asiento` AS ventas_asiento,
+     ventas.`subtotal` AS ventas_subtotal,
+     ventas.`isv` AS ventas_isv,
+     ventas.`total` AS ventas_total,
+     ventas.`metodo_pago` AS ventas_metodo_pago,
+     ventas.`cantidad_pagar` AS ventas_cantidad_pagar,
+     ventas.`cambio` AS ventas_cambio,
+     ventas.`fecha` AS ventas_fecha,
+     ventas.`estado` AS ventas_estado
+FROM
+     `ventas` ventas]]>
+		</queryString>
+		<field name="ventas_id_venta" class="java.lang.Integer"/>
+		<field name="ventas_cliente" class="java.lang.String"/>
+		<field name="ventas_pelicula" class="java.lang.String"/>
+		<field name="ventas_sala" class="java.lang.String"/>
+		<field name="ventas_asiento" class="java.lang.String"/>
+		<field name="ventas_subtotal" class="java.math.BigDecimal"/>
+		<field name="ventas_isv" class="java.math.BigDecimal"/>
+		<field name="ventas_total" class="java.math.BigDecimal"/>
+		<field name="ventas_metodo_pago" class="java.lang.String"/>
+		<field name="ventas_cantidad_pagar" class="java.math.BigDecimal"/>
+		<field name="ventas_cambio" class="java.math.BigDecimal"/>
+		<field name="ventas_fecha" class="java.lang.String"/>
+		<field name="ventas_estado" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT 1]]>
+	</queryString>
+	<field name="1" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="0" width="1180" height="79" backcolor="#000000" uuid="70d87855-adb8-4f4f-af47-6bcd7458dc13"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="120" y="0" width="846" height="67" forecolor="#FFFFFF" uuid="b7bd3712-a8a8-44fc-bf0f-7884afbc9aa3"/>
+				<textElement textAlignment="Center">
+					<font size="40" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE VENTAS]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement x="1076" y="0" width="94" height="79" uuid="f473195f-1e72-4acc-8acc-c78ae98c4f68"/>
+				<imageExpression><![CDATA["C:\\Users\\darwi\\OneDrive\\Documents\\NetBeansProjects\\alexks\\9-8-25 ULTIMO ESPERO\\Cinemania_VERSIONPRINCIPAL\\CineMania\\src\\imagenes\\loginreportes.jpg"]]></imageExpression>
+			</image>
+			<textField pattern="MM/dd/yyyy">
+				<reportElement x="976" y="59" width="100" height="20" forecolor="#FFFFFF" uuid="9a4f258b-23c9-4d3d-812d-b070bd470a82"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField pattern="h.mm a">
+				<reportElement x="976" y="28" width="100" height="20" forecolor="#FFFFFF" uuid="515dcf4a-fd8d-4269-b7d6-c121d291c52d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="156" splitType="Stretch">
+			<componentElement>
+				<reportElement key="table" style="table" x="0" y="16" width="1170" height="140" uuid="be4bfc50-8405-4baf-8e9e-2f9380303a05"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Ventas" uuid="9bba6f81-e8f7-46fb-8da6-46fc52d72d6c">
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="b3434def-3ef2-4a2d-8c7a-c4b1b3d1b2d9">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="92cb373a-d6c8-4726-97e8-495a60f8cd89"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Codigo]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="ff3702d7-f8e4-497f-a0fc-5cb26ab0c71f"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_id_venta}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="083dfac0-d3b4-49b9-95e5-adccab708d52">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="c902d5ac-57b7-40f2-b1da-3f767b96141f"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Nombre Cliente]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="dc384387-e4a0-4732-9d13-cdcd355ff1f3"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_cliente}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="88694622-1e8a-4b83-9e26-16fbf7978d31">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="23d249f0-5bc3-47f1-99a2-5baf4a4c75f5"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[Pelicula]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="3d532be1-832c-467a-9851-d43ed1a7d53d"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_pelicula}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="ebbd46b6-a024-4e0b-96a3-ba023e9309a9">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="c08e1adb-178c-4f71-b302-4ca688932635"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[SALA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="a18722d9-aa45-4d84-98ef-28fd6025b5bd"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_sala}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="038177d7-ac75-4830-83eb-02a3926dd56f">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="6ff4aae5-f4c9-4421-8cd3-f091f5f637ca"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[ASIENTO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="b7a1cd72-2973-45f0-b649-7429b6c5d847"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_asiento}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="08bb2a76-b709-48d1-8fbd-07d47850d1ef">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="2b43ca73-97c1-4778-8c7c-1cc285382082"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[SUBTOTAL]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="33738a75-761e-4b40-8411-ac86abaa3599"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_subtotal}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="0bf20334-b320-4320-8e52-7600959a1466">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="eca727e5-7db5-4232-b6da-d01d8d2cb28a"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[ISV]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="da7708e8-98a7-43ad-b0cf-3f5181393b96"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_isv}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="607280bb-c325-44fc-8158-7b8ce382dff1">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="3ca90d0f-fdfb-4b51-89ce-11dabdddbafe"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[TOTAL]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="78b43278-1a61-4744-823b-22b2460930c6"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_total}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="8a0171fc-8fde-4457-9efd-09a221e14d02">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="5770b419-d77b-4b52-9aa5-a133ee1390c8"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[METODO PAGO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="399f0abe-8c3a-4dbc-b925-5f719bf19dda"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_metodo_pago}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="242cddab-52d1-4dcc-9562-129631ae6888">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="bdc4e712-9b16-4d86-b399-fc6b878cde55"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[CANTIDAD A PAGAR]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="8dbf7f68-33d1-4dbd-8df4-6f51fd1fa979"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_cantidad_pagar}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="0f71354a-fc0d-4c7f-90a6-21c15132662a">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="c7a85a33-71fa-4375-a3c2-0b2e31480d97"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[CAMBIO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="846a73c3-4572-4f09-a835-4bb591d60cf6"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_cambio}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="2cb11ac2-a8dd-4c7a-9882-0e7f9df6b73b">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="376c578d-422b-4bc3-aea2-f5daf6609dd3"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[FECHA]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="c4d970bf-1ca6-425e-9c3f-f3e1d36b5145"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_fecha}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="ba53b079-e928-4862-9786-8245ee8af8ff">
+						<jr:tableHeader style="table_TH" height="30"/>
+						<jr:tableFooter style="table_TH" height="30"/>
+						<jr:columnHeader style="table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="5abc2c54-d1d3-42fc-bbd3-127861538dd6"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<text><![CDATA[ESTADO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table_CH" height="30"/>
+						<jr:detailCell style="table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="90" height="20" uuid="de30d43e-7f30-4f29-a2e9-37972847d950"/>
+								<textElement textAlignment="Center">
+									<font isBold="true"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{ventas_estado}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="74" splitType="Stretch">
+			<textField>
+				<reportElement x="1070" y="37" width="100" height="20" uuid="42cd7812-6eae-4892-ab23-fd2bb8890c5f"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="451" splitType="Stretch">
+			<pieChart>
+				<chart>
+					<reportElement x="0" y="0" width="428" height="441" uuid="c2bc6cff-cb2c-44bb-ba79-242fa0320b5a"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<datasetRun subDataset="VENTAS" uuid="2f6f1e65-01ea-4836-b2b2-218470e0862f"/>
+					</dataset>
+					<keyExpression><![CDATA[$F{ventas_cliente}]]></keyExpression>
+					<valueExpression><![CDATA[$F{ventas_total}]]></valueExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<pieChart>
+				<chart>
+					<reportElement x="428" y="0" width="389" height="441" uuid="fbbedd87-ffbb-4105-b1a0-622a228190bd"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<datasetRun subDataset="VENTAS" uuid="a8eb26ac-4272-41f4-bad7-c93bad87743b"/>
+					</dataset>
+					<keyExpression><![CDATA[$F{ventas_pelicula}]]></keyExpression>
+					<valueExpression><![CDATA[$F{ventas_total}]]></valueExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+			<pieChart>
+				<chart>
+					<reportElement x="817" y="0" width="363" height="441" uuid="f68e0a28-8054-46cf-8220-7efb785cdd8a"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset>
+						<datasetRun subDataset="VENTAS" uuid="480a1052-f57e-46be-96a5-f0d4bf5a89f0"/>
+					</dataset>
+					<keyExpression><![CDATA[$F{ventas_fecha}]]></keyExpression>
+					<valueExpression><![CDATA[$F{ventas_total}]]></valueExpression>
+				</pieDataset>
+				<piePlot>
+					<plot/>
+					<itemLabel/>
+				</piePlot>
+			</pieChart>
+		</band>
+	</summary>
+</jasperReport>

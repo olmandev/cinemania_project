@@ -12,18 +12,38 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Informacion.java</file>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/Reportes/Reporte.java</file>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Ventas_CRUD.java</file>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/modelo/ItemVentaPOO.java</file>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/modelo/VentaPOO.java</file>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/modelo/InventarioPOO.java</file>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Inventario_CRUD.java</file>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/CamaraForm.java</file>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Principal.java</file>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Login.java</file>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/modelo/ConsultaVenta.java</file>
-            <file>file:/C:/Users/darwi/OneDrive/Documents/NetBeansProjects/alexks/9-8-25%20ULTIMO%20ESPERO/Cinemania_VERSIONPRINCIPAL/CineMania/src/Reportes/Fechas.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Cinemania_grupo3/Cinemania_grupo3.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Ventas_CRUD.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Tienda.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Controlador/VentaControlador.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Controlador/HorariosControlador.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Horarios_CRUD.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Controlador/InventarioControlador.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Controlador/LoginControlador.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Controlador/PeliculaControlador.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Controlador/PrincipalControlador.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Controlador/ProductoControlador.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Controlador/ProveedorControlador.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Controlador/SalaControlador.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Controlador/ventaPDF.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/AsientosForm.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Salas_CRUD.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Boletos.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/CamaraForm.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Reportes/Reporte.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Informacion.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/modelo/ConsultaHorarios.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/modelo/ConsultaInventario.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/modelo/ItemVentaPOO.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Proveedores_CRUD.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Registro.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Inventario_CRUD.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Login.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Peliculas_CRUD.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/modelo/ConsultaVenta.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/modelo/ConsultaLogin.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/modelo/ConsultaSalas.java</file>
+            <file>file:/C:/Users/darwi/OneDrive/Documents/EXPOSICION%20DEL%20GRUPO%20FINAL/ULTIMA_VERSION/Cinemania_VERSIONPRINCIPAL/CineMania/src/Vista/Principal.java</file>
         </group>
     </open-files>
 </project-private>

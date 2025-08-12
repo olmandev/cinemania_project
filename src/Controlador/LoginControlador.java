@@ -87,7 +87,7 @@ public class LoginControlador implements ActionListener {
         formR.jtfApellidoLog.setText(null);
         formR.jtfUsuarioLog.setText(null);
         formR.jtfContrasena.setText(null);
-        formR.cbxRoles.setSelectedItem(null);
+        formR.cbxRoles.setSelectedIndex(0);
         int fila = formR.jtblRegistro.getRowCount();
         for (int i = fila - 1; i >= 0; i--) {
             modelo.removeRow(i);
@@ -129,7 +129,7 @@ public class LoginControlador implements ActionListener {
             user.setEstado("Activo");
             if (conexion.actualizarUsuario(user)) {
                 JOptionPane.showMessageDialog(null, "CLIENTE ACTUALIZADO CORRECTAMENTE - CONT");
-                //limpiar();
+                limpiarRegistro();
             } else {
                 JOptionPane.showMessageDialog(null, "NO SE PUDO ACTUALIZAR CLIENTE - CONT");
                 //limpiar();
@@ -151,6 +151,7 @@ public class LoginControlador implements ActionListener {
         }
 
         if (e.getSource() == formR.botLeer) {
+            limpiarRegistro();
             llenarTabla();
         }
 

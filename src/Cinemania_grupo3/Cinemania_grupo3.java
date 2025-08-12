@@ -100,6 +100,7 @@ public class Cinemania_grupo3 {
             prin.botHorarios.setEnabled(true);
             prin.botInformacion.setEnabled(true);
             prin.botReportes.setEnabled(true);
+            prin.botResgistrar.setEnabled(true);
 
         } else if (rolUsuario.equalsIgnoreCase("Cajero")) {
             prin.botPeliculas.setEnabled(false);
@@ -109,7 +110,9 @@ public class Cinemania_grupo3 {
             prin.botHorarios.setEnabled(false);
             prin.botInformacion.setEnabled(false);
             prin.botReportes.setEnabled(false);
+            prin.botResgistrar.setEnabled(false);
             prin.botVentas.setEnabled(true);
+            
         }
 
         PeliculaPOO peli = new PeliculaPOO();
@@ -133,7 +136,6 @@ public class Cinemania_grupo3 {
         Tienda formT = new Tienda(prin, true);
         Informacion forminfo = new Informacion();
         Registro formR = new Registro(prin, true);
-
         ConsultaPelicula conPeli = new ConsultaPelicula();
         ConsultaProveedor conProve = new ConsultaProveedor();
         ConsultaProducto conProdu = new ConsultaProducto();
@@ -141,6 +143,7 @@ public class Cinemania_grupo3 {
         ConsultaSalas conSal = new ConsultaSalas();
         ConsultaHorarios conHor = new ConsultaHorarios();
         ConsultaVenta conVent = new ConsultaVenta();
+        
 
         PeliculaControlador peliCont = new PeliculaControlador(peli, formpeli, conPeli, prin);
         ProveedorControlador proveCont = new ProveedorControlador(prove, formprove, conProve, prin);
@@ -149,7 +152,7 @@ public class Cinemania_grupo3 {
         SalaControlador salCont = new SalaControlador(sal, formsala, conSal, prin);
         HorariosControlador horCont = new HorariosControlador(hor, formHor, conHor, conPeli, prin);
         VentaControlador ventCont = new VentaControlador(formventa, prin, conVent, vent, formB, formA, formT, item);
-        PrincipalControlador prinCont = new PrincipalControlador(prin, formpeli, formprove, formsala, formventa, formprodu, formHor, forminfo, formR);
+       PrincipalControlador prinCont = new PrincipalControlador(prin, formpeli, formprove, formsala, formventa, formprodu,forminfo, formHor, formR);
 
         prinCont.Iniciar();
 

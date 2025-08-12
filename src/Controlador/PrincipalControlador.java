@@ -7,6 +7,7 @@ package Controlador;
 import Reportes.Reporte;
 import Vista.Horarios_CRUD;
 import Vista.Informacion;
+import Vista.Login;
 import Vista.Peliculas_CRUD;
 import Vista.Principal;
 import Vista.Productos_CRUD;
@@ -17,6 +18,9 @@ import Vista.Ventas_CRUD;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import modelo.ConsultaLogin;
+import modelo.LoginPOO;
 
 /**
  *
@@ -34,10 +38,14 @@ public class PrincipalControlador implements ActionListener {
     private Informacion forminfo;
     private Registro formR;
     
-    public PrincipalControlador(Principal prin, Peliculas_CRUD formpeli, Proveedores_CRUD formprove, Salas_CRUD formsala, Ventas_CRUD formventa, Productos_CRUD formprodu, Horarios_CRUD formHor, Informacion forminfo, Registro formR) {
+    public PrincipalControlador(Principal prin, Peliculas_CRUD formpeli, Proveedores_CRUD formprove, Salas_CRUD formsala, Ventas_CRUD formventa, Productos_CRUD formprodu,Informacion forminfo, Horarios_CRUD formHor, Registro formR) {
         this.prin = prin;
         this.formpeli = formpeli;
         this.formR = formR;
+        ConsultaLogin conLoginLigero = new ConsultaLogin();
+LoginPOO userLigero = new LoginPOO();
+Login loginDummy = new Login("", "");
+new LoginControlador(loginDummy, userLigero, conLoginLigero, this.formR, this.prin);
         this.formprove = formprove;
         this.formsala = formsala;
         this.formventa = formventa;
@@ -63,12 +71,12 @@ public class PrincipalControlador implements ActionListener {
         formsala.setLocationRelativeTo(null);
         formprove.setLocationRelativeTo(null);
         formprodu.setLocationRelativeTo(null);
-        forminfo.setLocationRelativeTo(null);
+//        forminfo.setLocationRelativeTo(null);
         formHor.setLocationRelativeTo(null);
         formR.setLocationRelativeTo(null);
         formventa.setLocationRelativeTo(null);
     }
-
+   
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -109,5 +117,10 @@ public class PrincipalControlador implements ActionListener {
         if (e.getSource() == prin.botsalir) {
             System.exit(0);
         }
+        
+        
+                
+    
+
     }
 }
